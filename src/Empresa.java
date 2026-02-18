@@ -60,9 +60,15 @@ public class Empresa {
         }
        return modificado;
     }
-    void listarOrdenado(){
+    void listarOrdenadoPorEdad(){
         List<Persona> listaOrdenada= empleados;
         Collections.sort(listaOrdenada);
+        for (Persona miPers: listaOrdenada)
+            System.out.println(miPers);
+    }
+    void listarOrdenadoPorNombre(){
+        List<Persona> listaOrdenada= empleados;
+        Collections.sort(listaOrdenada,(a1, a2) -> a1.nombre.compareTo(a2.nombre) );
         for (Persona miPers: listaOrdenada)
             System.out.println(miPers);
     }
@@ -77,6 +83,7 @@ public class Empresa {
         System.out.println("4-Modificar Nombre"); //Crear una nueva persona que sustituya a la anterior
         System.out.println("5-Listar empleados");
         System.out.println("6-listar ordenado por edad");
+        System.out.println("7-listar ordenado por nombre");
         do  {
             System.out.println("Dar opc ");
             opc= Integer.parseInt(sc.nextLine());
@@ -109,7 +116,10 @@ public class Empresa {
                 case 5:
                     listar();
                     break;
-                    case 6: listarOrdenado();
+                 case 6: listarOrdenadoPorEdad();
+                    break;
+                case 7: listarOrdenadoPorNombre();
+                    break;
             }
         }while (opc !=0);
 
