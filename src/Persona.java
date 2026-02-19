@@ -3,6 +3,13 @@ import java.util.Objects;
 public class Persona implements Comparable<Persona>{
     int edad;
     String nombre;
+    double sueldo;
+    public Persona(String nombre, int edad, double sueldo) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.sueldo=sueldo;
+    }
+
     Persona (String nombre, int edad){
         this.nombre= nombre;
         this.edad= edad;
