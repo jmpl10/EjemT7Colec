@@ -64,8 +64,11 @@ public class UsoIterable {
             System.out.println(it.next());
         }
         static void borrarConIterator(){
-            List <String> palabras= Arrays.asList("uno", "dos", "tres");
-            for (Iterator it = palabras.iterator(); it.hasNext();) {
+            List <String> palabras= new ArrayList<>();
+            palabras.add("uno");
+            palabras.add("dos");
+            palabras.add("tres");
+            for (Iterator <String> it= palabras.iterator();it.hasNext();){
                 String s= (String) it.next();
                 if (s.equals("dos"))
                         it.remove();
